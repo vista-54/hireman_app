@@ -1,9 +1,10 @@
 import {Injectable} from "@angular/core";
 import {EntityService} from "./entity.service";
 import {RequestService} from "./request.service";
+
 @Injectable()
 
-export class UserService extends EntityService {
+export class UserSkillsService extends EntityService {
 
     /**
      *
@@ -11,9 +12,8 @@ export class UserService extends EntityService {
      */
     constructor(public request: RequestService) {
         super(request);
-        this.service_name = 'user';
+        this.service_name = 'user-skill';
     }
-
 
 
 }

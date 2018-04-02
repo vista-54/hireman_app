@@ -1,0 +1,69 @@
+page-profile-info {
+  .scroll-content {
+    padding-bottom: 0px !important;
+  }
+  img {
+    width: 90%;
+    margin-top: 40px;
+    max-width: 120px;
+    min-width: 95px;
+    border-radius: 50%;
+
+  }
+  .checkbox .checkbox-checked .checkbox-inner {
+    border-color: white;
+  }
+  .item-label-floating .text-input {
+    margin-left: 18px;
+  }
+  .label {
+    margin-left: 15px;
+  }
+  .item.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: #fafafa;
+    -webkit-box-shadow: inset 0 -1px 0 0 #fafafa;
+    box-shadow: inset 0 0px 0 0 #fafafa;
+  }
+  .item.item-input.item-input-has-focus .item-inner, .item-.item-input.item-input-has-focus .item-inner {
+    border-bottom-color: #fafafa;
+    -webkit-box-shadow: inset 0 0px 0 0 #fafafa;
+    box-shadow: inset 0 0px 0 0 #fafafa;
+  }
+  .list .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
+    border-bottom-color: #fafafa;
+    -webkit-box-shadow: inset 0 0px 0 0 #fafafa;
+    box-shadow: inset 0 0px 0 0 #fafafa;
+  }
+  .list .item-input.item-input-has-focus:last-child, .list .item-input.input-has-focus:last-child {
+    border-bottom-color: #fafafa;
+    -webkit-box-shadow: inset 0 0px 0 0 #fafafa;
+    box-shadow: inset 0 0px 0 0 #fafafa;
+  }
+  .item-input-has-focus .label[stacked], .input-has-focus .label[stacked], .item-input-has-focus .label[floating], .input-has-focus .label[floating] {
+    color: #fafafa;
+  }
+  .item-block .item-inner {
+    border-bottom: 1px solid #fafafa !important;
+  }
+  .item-label-stacked .text-input, .item-label-floating .text-input {
+    color: #fafafa;
+  }
+  .row {
+    background: white;
+    margin-top: 3px;
+
+  }
+  .item-input:last-child {
+    border-bottom: 1px solid transparent !important;
+  }
+  .first_last_name {
+    height: 100px;
+  }
+  .list {
+    margin-top: 4px;
+  }
+  .text-input {
+    margin: 13px 14px;
+  }
+
+}

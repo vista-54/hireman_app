@@ -1,0 +1,40 @@
+<ion-card *ngFor="let skill of skillsArr">
+    <ion-card-header text-wrap>
+        {{skill.description}}
+    </ion-card-header>
+
+    <ion-card-content>
+        <ion-item no-padding>
+            <ion-label class="card-label">
+                {{skill.lvl}}/10
+            </ion-label>
+            <button *ngIf="!editSkills"
+                    ion-button
+                    text-capitalize
+                    round outline
+                    color="grey"
+                    item-end>Змiнити</button>
+            <ion-checkbox color="pimary"
+                          *ngIf="editSkills"
+                          (click)="checkSkill(skill)"
+                          item-end></ion-checkbox>
+        </ion-item>
+    </ion-card-content>
+</ion-card>
+
+<ion-fab right bottom *ngIf="!editSkills">
+    <button ion-fab (click)="goToAddSkill()" color="grey">
+        <ion-icon name="add" color="white"></ion-icon>
+    </button>
+</ion-fab>
+<!--ngClass="{{skillsArr.length === 0 ? '' : 'custom-margin'}}"-->
+<ion-footer text-center *ngIf="editSkills" ngClass="{{registrationIsFinished ? 'above-tabs' : 'bottom'  }}">
+    <button ion-button
+            no-margin
+            color="white"
+            class="futer-button"
+            (click)="deleteSkills()"
+            col-12>Видалити вибрані</button>
+</ion-footer>
+
+

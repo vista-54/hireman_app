@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        Профайл
+    </ion-navbar>
+</ion-header>
+<ion-content padding-vertical>
+    <div padding>
+        <ion-segment [(ngModel)]="segment">
+            <ion-segment-button value="info">
+                Про мене
+            </ion-segment-button>
+            <ion-segment-button value="skills">
+                Навички
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div [ngSwitch]="segment">
+
+        <div *ngSwitchCase="'info'">
+            <page-profile-info>
+
+            </page-profile-info>
+        </div>
+
+        <div *ngSwitchCase="'skills'">
+            <page-profile-skill></page-profile-skill>
+        </div>
+    </div>
+</ion-content>

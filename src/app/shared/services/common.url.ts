@@ -7,9 +7,14 @@ export const COMMON_URL = {
         logout: api + 'user/logout'
     },
     user: {
-        create: api + 'user/register'
+        index: api + 'user',
+        create: api + 'user/register',
     },
     job: {
         index: api + 'job'
+    },
+    'user-skill': {
+        index: api + 'user-skill'
+
     }
 };
