@@ -1,0 +1,332 @@
+page-job-list {
+  //.toolbar-background-md {
+  //  background: #081d32;
+  //}
+  .checks {
+    fa-icon {
+      float: right;
+    }
+  }
+  .scroll-content {
+    background: #fafafa;
+    padding-top: 10px !important;
+    margin-bottom: 55px;
+  }
+  .toolbar-title {
+    color: white;
+  }
+  .icon-right {
+    float: right;
+    font-size: 0.9em;
+  }
+  ion-navbar {
+    background: #2d2d2d !important;
+    color: white !important;
+  }
+  .searchbar .searchbar-input {
+    border-radius: 65px;
+    background-color: #0c2a49;
+    color: white;
+    width: 88%;
+    line-height: 2.4rem;
+    font-weight: 500;
+    margin-left: 3px;
+    font-size: 12px;
+  }
+  .searchbar searchbar .searchbar-animated .searchbar-show-cancel .searchbar-active .searchbar-left-aligned .searchbar-has-focus {
+    //display:none;
+    //color: white;
+  }
+  //.toolbar .searchbar-md .searchbar-md-cancel {
+  //  display: none;
+  //}
+  .searchbar .searchbar-search-icon {
+    color: white!important;
+    background-size: 16px;
+    // background-color: white!important;
+  }
+  .searchbar .searchbar-has-focus .searchbar-show-cancel .searchbar-search-icon{
+    color: white!important;
+  }
+
+
+
+
+  /* .icon .icon .ion-arrow-back{
+     color: white;
+   }*/
+  ion-icon{
+    color:white;
+  }
+
+  /*ion-content padding {
+    align-items:center;
+    justify-content: center;
+
+  }*/
+  ion-row {
+    justify-content: center;
+    margin-right: 2%;
+  }
+
+  .left_button {
+    border: 1px solid black;
+    text-transform: none;
+    color: #081d32;
+    height: 25px;
+    border-radius: 25px 0 0 25px;
+    text-transform: none;
+    font-weight: bold;
+  }
+
+  .right_button {
+    border: 1px solid black;
+    background: white;
+    color: #081d32;
+    text-transform: none;
+    height: 25px;
+    border-radius: 0 25px 25px 0;
+    font-weight: bold;
+  }
+
+  ion-card-content {
+    color: #5d6d7d;
+    font-family: 'Roboto';
+    font-size: 17px;
+  }
+  ion-card-content h2 {
+    font-weight: bold;
+  }
+  .data {
+    color: #5d6d7d;
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .card h4 {
+    margin: 0px;
+    font-size: 16px;
+    color: #182c40;
+    font-weight: 540;
+    margin-top: 5px;
+  }
+  .card {
+    h2 {
+      p {
+        color: #f9b707;
+        font-size: 14px;
+      }
+    }
+  }
+  .card h2 {
+    font-weight: bold;
+    font-size: 16px;
+    //font-family: "Roboto";
+    color: #081d32;
+  }
+  .segment .segment-button.activated, .segment .segment-button.segment-activated {
+    background: color($colors, secondary) !important;
+    color: white !important;
+    //font-weight: 200 !important;
+
+  }
+  .card-content {
+    padding-bottom: 1px;
+  }
+  .card .note-ios {
+    margin: 10px;
+    font-size: 16px;
+    //font-family: "Roboto";
+    //  font-weight: 200;
+  }
+
+  .card .note {
+    margin: 10px;
+    font-size: 12px;
+    // font-family: "Roboto";
+    // font-weight: 200;
+  }
+  .button-round {
+    text-transform: none;
+    border: 1px solid color($colors, secondary);
+  }
+
+  [col-12] {
+    text-align: center;
+    padding-bottom: 17px;
+  }
+
+  //[col-12] {
+  //  text-align: center;
+  //  padding-bottom: 17px;
+  //}
+
+  .button-inner {
+    color: #5d6d7d;
+  }
+  [col-6] {
+    padding: 0;
+  }
+  .button-outline {
+    border-color: #5d6d7d;
+  }
+  #orange_button {
+    border-color: #fdad2a;
+    height: 28px;
+    width: 43%;
+
+  }
+  #orange_button span {
+    color: #fdad2a;
+    font-size: 12px;
+  }
+  .left_button p {
+    font-size: 12px;
+
+    //font-weight: bold;
+    text-transform: none;
+    margin-top: -8px;
+
+  }
+
+  .right_button p {
+    font-size: 13px;
+
+    //font-weight: bold;
+    text-transform: none;
+    margin-top: -8px;
+  }
+  page-home .button-inner {
+    margin: 0 13px !important;
+  }
+  .note {
+    color: #888a8c;
+  }
+  .button-outline {
+    border-color: #5d6d7d;
+    /* margin-left: 22px; */
+    margin: 0px 12px 0px 13px;
+  }
+  .checks fa-icon {
+    color: #4ec08d;
+    margin-left: 59%;
+    //padding: 5px;
+
+  }
+  .checks h4 {
+    font-weight: 600 !important;
+  }
+  .fa-times {
+    color: #f24755 !important;
+  }
+  .grid {
+    padding: 0;
+    width: 87%;
+  }
+  .segment .segment-button.segment-activated {
+    height: 25px;
+    border-color: transparent;
+  }
+  .segment .segment-button {
+    height: 25px;
+    color: #081d32;
+    border-bottom-color: #081d32;
+    font-weight: bold;
+  }
+  .card h4 h2 {
+    // font-family: "Roboto-Bold";
+  }
+  .label i {
+    font-size: 11px;
+  }
+  .label {
+    // margin-left: 8px;
+    margin: 11px 8px 8px 0;
+  }
+  .label b {
+    font-size: 12px;
+  }
+  .item {
+    margin-left: 0;
+  }
+  #left_button {
+    height: 28px;
+    width: 41%;
+  }
+  #left_button span {
+    font-size: 12px;
+  }
+  #disable_button {
+    height: 28px;
+    width: 41%;
+  }
+  #disable_button span {
+    font-size: 12px;
+  }
+  ion-note {
+    color: #888a8c;
+  }
+
+  @media screen and (max-width: 1920px) {
+    .button-outline {
+      margin: 0px 65px 0px 65px;
+    }
+    .checks fa-icon {
+      margin-left: 80%;
+
+    }
+    #left_button {
+      width: 35%;
+    }
+    #orange_button {
+      width: 41%;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .checks fa-icon {
+      margin-left: 75%;
+
+    }
+    .button-outline {
+      margin: 0px 58px 0px 58px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .button-outline {
+      margin: 0px 12px 0px 13px;
+    }
+    #left_button {
+      width: 41%;
+    }
+    #orange_button {
+      width: 43%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .checks fa-icon {
+      color: green;
+      margin-left: 59%;
+    }
+  }
+  @media screen and (max-width: 377px) {
+    .button-outline {
+      margin: 0px 7px 0px 5px;
+    }
+  }
+  @media screen and (max-width: 335px) {
+    .checks fa-icon {
+      margin-left: 45%;
+
+    }
+    .button-outline {
+      margin: 0;
+    }
+  }
+  @media screen and (max-width: 327px) {
+    .button-round {
+      padding: 0px 1.6rem;
+    }
+  }
+
+}
+

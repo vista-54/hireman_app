@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar>
+    Пропозиції
+    </ion-navbar>
+</ion-header>
+<ion-content padding-vertical>
+    <div padding>
+        <ion-segment [(ngModel)]="category">
+            <ion-segment-button value="all">
+                Всі
+            </ion-segment-button>
+            <ion-segment-button value="my">
+                Мої
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+</ion-content>

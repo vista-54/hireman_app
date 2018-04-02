@@ -1,0 +1,178 @@
+page-registration {
+  font-size: 12px;
+
+  ion-content {
+    ion-row {
+      margin: 42% auto;
+    }
+  }
+  .scroll-content {
+    margin-bottom: 0!important;
+    padding: 16px;
+    padding-bottom: 0!important;
+
+  }
+
+  a {
+    text-transform: uppercase;
+    color: white;
+    &:last-child {
+      color: color($colors, primary);
+    }
+  }
+
+  ion-content {
+    background: url('../assets/imgs/bg.png');
+    background-size: 100% 100%;
+  }
+
+  .item {
+    border-radius: 40px;
+    opacity: 0.5;
+    height: 40px;
+    width: 88%;
+    font-weight: bold;
+    .input {
+      font-size: 13px;
+      font-weight: bold;
+
+    }
+  }
+
+  .button {
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 88%;
+    height: 40px;
+    margin: 6% 0 30px 0;
+  }
+  .pass-icon {
+    z-index: 99;
+  }
+  ion-input placeholder {
+    color: red;
+  }
+  [col-9] {
+    margin-left: 9%;
+  }
+  .text-cust {
+    margin-right: 9%;
+  }
+  button ion-button {
+    color: #fdad2a;
+  }
+  a:last-child {
+    color: #fdad2a;
+  }
+  .item.item-input.item-input-has-focus .item-inner, .item.item-input.item-input-has-focus .item-inner {
+    border-bottom-color: transparent;
+    box-shadow: inset 0 -1px 0 0 black;
+    outline: black;
+  }
+
+  button ion-button {
+    color: #fdad2a;
+  }
+  a:last-child {
+    color: #fdad2a;
+  }
+  .input-cover :focus {
+    border: 1px solid #30cc00;
+  }
+  .ion-input .placeholder {
+    color: white;
+  }
+  .item.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: transparent;
+    box-shadow: inset 0 0px 0 0 transparent;
+    -webkit-box-shadow: inset 0 0px 0 0 transparent;
+  }
+  .item.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+
+    border-bottom-color: transparent;
+    -webkit-box-shadow: inset 0 -1px 0 0 transparent;
+    box-shadow: inset 0 -1px 0 0 transparent;
+  }
+  .item-input-has-focus {
+    border: 1px solid;
+  }
+  .item ion-icon[item-left], .item ion-icon[item-right], .item ion-icon[item-start], .item ion-icon[item-end] {
+    font-size: 2.5rem;
+    color: rgba(1, 1, 2, 0.68);
+    margin-top: 14px;
+  }
+  [col-sm-9] {
+    margin-left: 10%;
+  }
+  .valid-button {
+    background-color: #ffb130;
+  }
+  .valid .label {
+    color: #A80B00;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .valid .item {
+    background-color: transparent;
+    opacity: 1;
+    margin-bottom: 0;
+
+  }
+  .item.item-block .item-inner {
+    border-bottom: 1px solid transparent;
+
+  }
+  .input_one {
+    height: 69px;
+  }
+  .valid-button {
+    background-color: #ffb130;
+  }
+  .input_two {
+    height: 69px;
+  }
+  .valid {
+    display: inline;
+  }
+  .telefone_all{
+    //margin-left: -28;
+    // margin-top: 5px;
+  }
+  .telef{
+    z-index: 9999;
+    margin-right: 32px;
+    border: 1px solid transparent;
+    background: transparent;
+    height: 22px;
+    width: 100%;
+    font-size:12px;
+    color: #000;
+
+  }
+  .telef p{
+    /*margin-right: 29px;
+        margin-top: -18px;
+        font-size: 12px;*/
+    color: #000;
+    margin-top: -15px;
+    font-size: 12px;
+
+  }
+  .telephone{
+    margin-left: 29px;
+    border: none;
+    margin-top: 2px;
+  }
+  a{
+    font-size: 11px;
+  }
+  .item ion-icon[item-right]{
+    color: rgba(78, 78, 83, 0.68)!important;
+  }
+
+}
+
+
+
+

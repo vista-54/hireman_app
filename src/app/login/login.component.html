@@ -1,0 +1,62 @@
+<ion-content padding>
+    <ion-row align-items-center>
+        <ion-col col-sm-9>
+            <div class="input_one">
+                <ion-item focus>
+
+                    <div class="telefone_all">
+                        <div class="telef"><input class="telephone"
+                                                  type="tel"
+                                                  maxlength="9"
+                                                  [(ngModel)]="user.phone"
+                                                  placeholder="(xx) xxx-xx-xx">
+                            <p>+380</p></div>
+                    </div>
+
+                </ion-item>
+
+                <div class="valid">
+                </div>
+            </div>
+            <div class="input_bottom">
+                <div class="input_two">
+                    <ion-item justify-content-center
+                    >
+                        <!--ngClass="{{loginForm.controls.password.errors ? invalid : ''}}"-->
+                        <ion-input
+                                [type]="isActive ? 'password' : 'text'"
+                                placeholder="ПАРОЛЬ"
+                                [(ngModel)]="user.password"></ion-input>
+                        <ion-icon
+                                class="pass-icon"
+                                [name]="isActive ? 'eye-off': 'eye' "
+                                item-right
+                                (click)="showPass()">
+                        </ion-icon>
+                    </ion-item>
+
+                    <div class="valid">
+                    </div>
+                </div>
+            </div>
+
+            <button ion-button
+                    round
+                    ngClass="{{ (user.phone !== null &&
+               user.password !== null &&
+               user.phone.length === 9 &&
+               user.password.length > 5) ? 'auth-active-button' : '' }}"
+                    (click)="login()">увійти
+            </button>
+            <div class="text-cust" text-center>
+                <div class="forgott">
+                    <div margin-bottom><a (click)="forgotPass()">забули пароль?</a></div>
+                </div>
+                <a margin-vertical>немає акаунта?</a>
+                <span><a color="colorlink" (click)="goToRegistration()">зареєструватися!</a></span>
+            </div>
+
+        </ion-col>
+    </ion-row>
+</ion-content>
+
