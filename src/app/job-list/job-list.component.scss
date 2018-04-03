@@ -1,10 +1,12 @@
 page-job-list {
   .card-ios {
     p {
-      margin: 0 0 2px;
-      font-size: 1.8rem;
-      color: #666;
+      color: $header_bg_color;
       font-weight: 500;
+      span {
+        color: $header_bg_color;
+        font-weight: 500;
+      }
     }
     span {
       font-weight: 200;

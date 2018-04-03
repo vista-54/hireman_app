@@ -1,4 +1,4 @@
-page-mainboard{
+page-mainboard {
   .toolbar-background-ios {
     background-color: $header_bg_color;
   }
@@ -10,4 +10,9 @@ page-mainboard{
   .button-clear-ios {
     color: rgb(255, 255, 255);
   }
+  ion-segment {
+    margin: 0 auto;
+    width: 50%;
+  }
 }
+
