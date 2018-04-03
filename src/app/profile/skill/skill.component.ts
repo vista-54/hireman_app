@@ -12,10 +12,7 @@ declare interface Skill {
     templateUrl: './skill.component.html'
 })
 export class SkillComponent {
-    public entity: Skill = {
-        name: '',
-        level: 0
-    };
+    public entity: Skill[];
 
     constructor(private service: UserSkillsService) {
 

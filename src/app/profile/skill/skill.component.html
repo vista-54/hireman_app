@@ -1,19 +1,20 @@
 <ion-card *ngFor="let skill of skillsArr">
     <ion-card-header text-wrap>
-        {{skill.description}}
+        {{entity.name}}
     </ion-card-header>
 
     <ion-card-content>
         <ion-item no-padding>
             <ion-label class="card-label">
-                {{skill.lvl}}/10
+                {{entity.level}}/10
             </ion-label>
             <button *ngIf="!editSkills"
                     ion-button
                     text-capitalize
                     round outline
                     color="grey"
-                    item-end>Змiнити</button>
+                    item-end>Змiнити
+            </button>
             <ion-checkbox color="pimary"
                           *ngIf="editSkills"
                           (click)="checkSkill(skill)"
@@ -34,7 +35,8 @@
             color="white"
             class="futer-button"
             (click)="deleteSkills()"
-            col-12>Видалити вибрані</button>
+            col-12>Видалити вибрані
+    </button>
 </ion-footer>
 
 

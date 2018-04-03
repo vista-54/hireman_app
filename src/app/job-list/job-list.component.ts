@@ -9,9 +9,11 @@ import {JobService} from "../shared/services/job.service";
 export class JobListComponent implements OnInit {
     public category: string;
     public list: any;
+    public showSearchbar: boolean;
 
     constructor(private service: JobService) {
-
+        this.category = 'all';
+        this.showSearchbar = false;
     }
 
     ngOnInit() {
@@ -23,6 +25,10 @@ export class JobListComponent implements OnInit {
             .subscribe(success => {
                 this.list = success['entity']['data'];
             })
+    }
+
+    showSearchBar() {
+        this.showSearchbar = !this.showSearchbar;
     }
 
 
