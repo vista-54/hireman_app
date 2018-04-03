@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {UserService} from "../../shared/services/user.service";
 
-declare interface User {
+export declare interface User {
     name: string,
     surname: string,
     city: string,
@@ -16,7 +15,8 @@ declare interface User {
     templateUrl: './info.component.html'
 })
 export class InfoComponent implements OnInit {
-    public entity: User = {
+    @Input() editMode: boolean;
+    entity: User = {
         name: '',
         surname: '',
         city: '',
@@ -24,11 +24,11 @@ export class InfoComponent implements OnInit {
         phone: '',
         passport: false
     };
-    public editMode: boolean;
+
+
     public defaultImg: string;
 
     constructor(private service: UserService) {
-        this.editMode = false;
         this.defaultImg = 'assets/imgs/camera.png';
 
     }
@@ -43,4 +43,6 @@ export class InfoComponent implements OnInit {
                 this.entity = success['entity'];
             });
     }
+
+
 }

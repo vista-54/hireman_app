@@ -5,6 +5,12 @@
                 Профайл
             </ion-title>
             <ion-buttons end>
+                <button *ngIf="!editMode" ion-button icon-only (click)="editEnable()">
+                    Редагувати
+                </button>
+                <button *ngIf="editMode" ion-button icon-only (click)="save()">
+                    Зберегти
+                </button>
             </ion-buttons>
         </div>
     </ion-navbar>
@@ -24,7 +30,7 @@
     <div [ngSwitch]="segment">
 
         <div *ngSwitchCase="'info'">
-            <page-profile-info>
+            <page-profile-info [editMode]="editMode">
 
             </page-profile-info>
         </div>

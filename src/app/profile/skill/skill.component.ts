@@ -18,6 +18,8 @@ export class SkillComponent {
 
     }
 
+
+
     ngOnInit() {
         this.getAll();
     }
