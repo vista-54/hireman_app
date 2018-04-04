@@ -1,18 +1,16 @@
 <ion-header>
     <ion-navbar>
-        <div class="bar bar-header bar-positive">
-            <ion-title text-center>
-                Профайл
-            </ion-title>
-            <ion-buttons end>
-                <button *ngIf="!editMode" ion-button icon-only (click)="editEnable()">
-                    Редагувати
-                </button>
-                <button *ngIf="editMode" ion-button icon-only (click)="save()">
-                    Зберегти
-                </button>
-            </ion-buttons>
-        </div>
+        <ion-title text-center>
+            Профайл
+        </ion-title>
+        <ion-buttons end>
+            <button *ngIf="!editMode" ion-button icon-only (click)="editEnable()">
+                <ion-icon name="brush"></ion-icon>
+            </button>
+            <button *ngIf="editMode" ion-button icon-only (click)="save()">
+                <ion-icon name="done-all"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 <ion-content padding-vertical>

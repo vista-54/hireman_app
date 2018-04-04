@@ -17,7 +17,7 @@ export class UserService extends EntityService {
     }
 
     public edit(data: Object) {
-        debugger
+        data['passport'] = data['passport'] ? 1 : 0;
         return this.request.put(COMMON_URL.user.update, data);
     }
 

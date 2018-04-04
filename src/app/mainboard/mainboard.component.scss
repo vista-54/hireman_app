@@ -1,5 +1,5 @@
 page-mainboard {
-  .toolbar-background-ios {
+  .toolbar-background-ios, .toolbar-background {
     background-color: $header_bg_color;
   }
   .bar-buttons-ios[end] {
@@ -7,13 +7,18 @@ page-mainboard {
       color: $toolbar-ios-title-text-color;
     }
   }
-  .button-clear-ios {
+  .toolbar-title-md {
+    color: $toolbar-ios-title-text-color;
+  }
+  .button-clear-ios, .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
     color: rgb(255, 255, 255);
   }
+
   ion-segment {
     margin: 0 auto;
     width: 50%;
   }
+
   ion-content {
     input[disabled] {
       color: #000 !important;
@@ -30,6 +35,13 @@ page-mainboard {
   .content {
     background-color: rgb(250, 250, 250);
 
+  }
+
+  [icon-only] ion-icon {
+    padding: 0 0.5em;
+    font-size: 1.5em!important;
+    line-height: .67;
+    pointer-events: none;
   }
 
 }

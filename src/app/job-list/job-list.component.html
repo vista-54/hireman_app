@@ -1,20 +1,19 @@
 <ion-header>
     <ion-navbar>
-        <div class="bar bar-header bar-positive">
-            <ion-title text-center *ngIf="!showSearchbar">Пропозиції
-            </ion-title>
-            <ion-buttons *ngIf="!showSearchbar" end>
-                <button ion-button icon-only (click)="showSearchBar()">
-                    <ion-icon ios="ios-search" md="md-search"></ion-icon>
-                </button>
-            </ion-buttons>
-            <div *ngIf="showSearchbar">
-                <ion-searchbar
-                        [animated]="'true'"
-                        [showCancelButton]="'true'"
-                        (ionCancel)="showSearchBar()">
-                </ion-searchbar>
-            </div>
+        <ion-title text-center *ngIf="!showSearchbar">Пропозиції
+        </ion-title>
+
+        <ion-buttons *ngIf="!showSearchbar" end>
+            <button ion-button icon-only (click)="showSearchBar()">
+                <ion-icon ios="ios-search" md="md-search"></ion-icon>
+            </button>
+        </ion-buttons>
+        <div *ngIf="showSearchbar">
+            <ion-searchbar
+                    [animated]="'true'"
+                    [showCancelButton]="'true'"
+                    (ionCancel)="showSearchBar()">
+            </ion-searchbar>
         </div>
     </ion-navbar>
 </ion-header>

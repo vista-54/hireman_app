@@ -10,7 +10,7 @@ import {MainboardComponent} from "./mainboard/mainboard.component";
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginComponent;
+  rootPage:any = MainboardComponent;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

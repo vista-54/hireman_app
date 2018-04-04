@@ -39,7 +39,7 @@ export class InfoComponent implements OnInit {
     public imageURI: string;
 
     constructor(private service: UserService, private cameraService: CameraService, private camera: Camera, private actionSheetCtrl: ActionSheetController,
-                private crop: Crop,private sanitizer: DomSanitizer) {
+                private crop: Crop, private sanitizer: DomSanitizer) {
         this.defaultImg = 'assets/imgs/camera.png';
     }
 
@@ -63,6 +63,9 @@ export class InfoComponent implements OnInit {
     }
 
     openPhotoActions() {
+        if (!this.editMode) {
+            return false;
+        }
         let actionSheet = this.actionSheetCtrl.create({
             title: 'Оберіть',
             buttons: [
@@ -90,7 +93,7 @@ export class InfoComponent implements OnInit {
 
     photoAddControl(sourceType: number) {
         this.cameraService.getMedia(sourceType).then(res => {
-            this.entity.file =  this.sanitizer.bypassSecurityTrustResourceUrl(res);
+            this.entity.file = this.sanitizer.bypassSecurityTrustResourceUrl(res);
         })
     }
 
