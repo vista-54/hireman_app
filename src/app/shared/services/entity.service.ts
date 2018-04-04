@@ -45,7 +45,7 @@ export class EntityService implements Entity {
      * @param id
      * @returns {Promise<ArrayBuffer>|Promise<TResult|ArrayBuffer>}
      */
-    public edit(data: any, id: number) {
+    public edit(data: any, id: number = null) {
         return this.request.put(COMMON_URL[this.service_name].create + '/' + id, data)
             .do(() => {
                 this.showNotification('success', COMMON_MSG[this.service_name].update);

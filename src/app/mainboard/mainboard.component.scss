@@ -14,5 +14,23 @@ page-mainboard {
     margin: 0 auto;
     width: 50%;
   }
+  ion-content {
+    input[disabled] {
+      color: #000 !important;
+      background: none !important;
+      opacity: 1 !important;
+    }
+    .checkbox-ios.checkbox-disabled, .item-ios.item-checkbox-disabled ion-label {
+      pointer-events: none;
+      color: #000 !important;
+      background: none !important;
+      opacity: 1 !important;
+    }
+  }
+  .content {
+    background-color: rgb(250, 250, 250);
+
+  }
+
 }
 

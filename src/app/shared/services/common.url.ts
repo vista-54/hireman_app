@@ -1,5 +1,5 @@
-const api = 'http://localhost:8888/hireman_backend/public/api/';
-// const api = 'https://phoenix.smartcapper.online/server/public/api/';
+// const api = 'http://localhost:8888/hireman_backend/public/api/';
+const api = 'https://hireman.smartcapper.online/server/public/api/';
 
 export const COMMON_URL = {
     auth: {
@@ -9,6 +9,7 @@ export const COMMON_URL = {
     user: {
         index: api + 'user',
         create: api + 'user/register',
+        update: api + 'user/update'
     },
     job: {
         index: api + 'job'

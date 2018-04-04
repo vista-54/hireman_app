@@ -11,8 +11,9 @@ import {ProfileComponent} from "../profile/profile.component";
 import {UserSkillsService} from "../shared/services/user-skills.service";
 import {InfoComponent} from "../profile/info/info.component";
 import {SkillComponent} from "../profile/skill/skill.component";
-// import {InfoComponent} from "../info/info.component";
-// import {FaIconComponent} from "../../components/fa-icon/fa-icon.component";
+import {FileUploadOptions, FileTransferObject} from '@ionic-native/file-transfer';
+import {File} from '@ionic-native/file';
+import {Camera} from '@ionic-native/camera';
 
 
 @NgModule({
@@ -43,7 +44,10 @@ import {SkillComponent} from "../profile/skill/skill.component";
     ],
     providers: [
         JobService,
-        UserSkillsService
+        UserSkillsService,
+        FileTransferObject,
+        File,
+        Camera
     ]
 })
 export class MainboardModule {

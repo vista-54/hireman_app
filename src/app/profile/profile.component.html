@@ -30,7 +30,7 @@
     <div [ngSwitch]="segment">
 
         <div *ngSwitchCase="'info'">
-            <page-profile-info [editMode]="editMode">
+            <page-profile-info [editMode]="editMode" (onEntityChange)="onEntityChange($event)">
 
             </page-profile-info>
         </div>

@@ -1,7 +1,6 @@
-import {Component, Input, Output} from "@angular/core";
-import {UserService} from "../shared/services/user.service";
-import {UserSkillsService} from "../shared/services/user-skills.service";
+import {Component} from "@angular/core";
 import {User} from "./info/info.component";
+import {UserService} from "../shared/services/user.service";
 
 
 @Component({
@@ -12,8 +11,9 @@ import {User} from "./info/info.component";
 export class ProfileComponent {
     public segment: string;
     public editMode: boolean;
+    private entity: User;
 
-    constructor() {
+    constructor(private service: UserService) {
         this.segment = 'info';
         this.editMode = false;
     }
@@ -22,7 +22,15 @@ export class ProfileComponent {
         this.editMode = !this.editMode;
     }
 
+    onEntityChange(data: User) {
+        this.entity = data;
+    }
+
     save() {
+        this.service.edit(this.entity)
+            .subscribe(data => {
+                console.log(data);
+            })
     }
 
 
