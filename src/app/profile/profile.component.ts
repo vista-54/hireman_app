@@ -29,8 +29,13 @@ export class ProfileComponent {
     save() {
         this.service.edit(this.entity)
             .subscribe(data => {
-                this.editEnable();
-            })
+                    debugger
+                    this.editEnable();
+                },
+                err => {
+                    debugger
+                    console.log(err);
+                })
     }
 
 

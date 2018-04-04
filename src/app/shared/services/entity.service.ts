@@ -3,6 +3,7 @@ import {COMMON_URL} from './common.url';
 import {RequestService} from './request.service';
 import {Entity} from './entity.interface';
 import {COMMON_MSG} from './common.messages';
+import {ToastController} from "ionic-angular";
 
 // declare const $: any;
 
@@ -12,7 +13,7 @@ export class EntityService implements Entity {
 
     protected service_name: string;
 
-    constructor(public request: RequestService) {
+    constructor(public request: RequestService, private toastCtrl: ToastController) {
     }
 
     /**
@@ -48,8 +49,11 @@ export class EntityService implements Entity {
     public edit(data: any, id: number = null) {
         return this.request.put(COMMON_URL[this.service_name].create + '/' + id, data)
             .do(() => {
-                this.showNotification('success', COMMON_MSG[this.service_name].update);
-            });
+                    this.showNotification('success', COMMON_MSG[this.service_name].update);
+                },
+                err => {
+                    console.log(err);
+                });
 
     }
 
@@ -66,20 +70,17 @@ export class EntityService implements Entity {
     }
 
     showNotification(type, message) {
-        // const type = ['', 'info', 'success', 'warning', 'danger'];
-        // $.notify({
-        //     icon: 'pe-7s-bell',
-        //     message: message
-        // }, {
-        //     type: type,
-        //     timer: 1000,
-        //     placement: {
-        //         from: 'top',
-        //         align: 'right'
-        //     }
-        // });
+        let toast = this.toastCtrl.create({
+            message: message,
+            duration: 3000,
+            position: 'top'
+        });
 
-        console.log({type: type, message: message});
+        toast.onDidDismiss(() => {
+            console.log('Dismissed toast');
+        });
+
+        toast.present();
     }
 
 }

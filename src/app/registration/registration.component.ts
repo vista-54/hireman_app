@@ -26,22 +26,9 @@ export class RegistrationComponent {
     registration() {
         this.service.create(this.user)
             .subscribe(data => {
-                this.showMessage("Реєстрація пройшла успішно. Увійдіть з вашими даними");
                 this.navCtrl.push(LoginComponent);
             });
     }
 
-    showMessage(message) {
-        let toast = this.toastCtrl.create({
-            message: message,
-            duration: 3000,
-            position: 'top'
-        });
 
-        toast.onDidDismiss(() => {
-            console.log('Dismissed toast');
-        });
-
-        toast.present();
-    }
 }
