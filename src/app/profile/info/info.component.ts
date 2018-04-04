@@ -3,6 +3,9 @@ import {UserService} from "../../shared/services/user.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {ActionSheetController, ModalController} from "ionic-angular";
 import {Camera, CameraOptions} from "@ionic-native/camera";
+import {Crop} from "@ionic-native/crop";
+import {CameraService} from "../../shared/services/camera.service";
+import {DomSanitizer} from "@angular/platform-browser";
 
 export declare interface User {
     name: string,
@@ -35,7 +38,8 @@ export class InfoComponent implements OnInit {
     public defaultImg: string;
     public imageURI: string;
 
-    constructor(private service: UserService, private camera: Camera, private actionSheetCtrl: ActionSheetController) {
+    constructor(private service: UserService, private cameraService: CameraService, private camera: Camera, private actionSheetCtrl: ActionSheetController,
+                private crop: Crop,private sanitizer: DomSanitizer) {
         this.defaultImg = 'assets/imgs/camera.png';
     }
 
@@ -85,25 +89,9 @@ export class InfoComponent implements OnInit {
     }
 
     photoAddControl(sourceType: number) {
-        const options: CameraOptions = {
-            quality: 50,
-            destinationType: this.camera.DestinationType.DATA_URL,
-            encodingType: this.camera.EncodingType.JPEG,
-            mediaType: this.camera.MediaType.PICTURE,
-            correctOrientation: true,
-            sourceType: sourceType,
-            targetWidth: 80,
-            targetHeight: 80
-        };
-
-        this.camera.getPicture(options).then((imageData) => {
-            this.entity.file = 'data:image/jpeg;base64,' + imageData;
-
-
-            // this.entity.file = imageData;
-        }, (err) => {
-            // Handle error
-        });
+        this.cameraService.getMedia(sourceType).then(res => {
+            this.entity.file =  this.sanitizer.bypassSecurityTrustResourceUrl(res);
+        })
     }
 
 

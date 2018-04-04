@@ -17,6 +17,7 @@ export class UserService extends EntityService {
     }
 
     public edit(data: Object) {
+        debugger
         return this.request.put(COMMON_URL.user.update, data);
     }
 

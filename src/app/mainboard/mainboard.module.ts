@@ -14,6 +14,9 @@ import {SkillComponent} from "../profile/skill/skill.component";
 import {FileUploadOptions, FileTransferObject} from '@ionic-native/file-transfer';
 import {File} from '@ionic-native/file';
 import {Camera} from '@ionic-native/camera';
+import {CameraService} from "../shared/services/camera.service";
+import {Crop} from "@ionic-native/crop";
+import {Base64} from "@ionic-native/base64";
 
 
 @NgModule({
@@ -47,7 +50,10 @@ import {Camera} from '@ionic-native/camera';
         UserSkillsService,
         FileTransferObject,
         File,
-        Camera
+        Camera,
+        CameraService,
+        Crop,
+        Base64
     ]
 })
 export class MainboardModule {
