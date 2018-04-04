@@ -29,6 +29,7 @@ export class LoginComponent {
         this.auth.login(this.user).subscribe(
             success => {
                 localStorage.token = success['data']['token'];
+                localStorage.isLogged = true;
                 this.navCtrl.push(MainboardComponent);
 
             },
