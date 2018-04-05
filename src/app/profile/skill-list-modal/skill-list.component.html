@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button (click)="dismiss()">
+                <span ion-text color="primary" showWhen="ios">Cancel</span>
+                <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title text-center>
+            Оберіть навички зі списку
+        </ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="save()">
+                <ion-icon name="done-all"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding-vertical>
+    <ion-list>
+        <ion-item *ngFor="let skill of entity">
+            <ion-label>{{skill.name}}</ion-label>
+            <ion-checkbox color="primary" round item-end (ionChange)="onChangeCheckBox(skill.id)">
+            </ion-checkbox>
+        </ion-item>
+    </ion-list>
+</ion-content>

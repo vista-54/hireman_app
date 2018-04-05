@@ -10,14 +10,16 @@ import {JobService} from "../shared/services/job.service";
 import {ProfileComponent} from "../profile/profile.component";
 import {UserSkillsService} from "../shared/services/user-skills.service";
 import {InfoComponent} from "../profile/info/info.component";
-import {SkillComponent} from "../profile/skill/skill.component";
+import {SkillComponent} from "../profile/user-skills/skill.component";
 import {FileUploadOptions, FileTransferObject} from '@ionic-native/file-transfer';
 import {File} from '@ionic-native/file';
 import {Camera} from '@ionic-native/camera';
 import {CameraService} from "../shared/services/camera.service";
 import {Crop} from "@ionic-native/crop";
 import {Base64} from "@ionic-native/base64";
-import {SkillListComponent} from "../profile/skill-list/skill-list.component";
+import {SkillListComponent} from "../profile/skill-list-modal/skill-list.component";
+import {SkillListService} from "../shared/services/skill-list.service";
+import {UserSkillRangeComponent} from "../profile/user-skill-range/user-skill-range.component";
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import {SkillListComponent} from "../profile/skill-list/skill-list.component";
         ProfileComponent,
         InfoComponent,
         SkillComponent,
-        SkillListComponent
+        SkillListComponent,
+        UserSkillRangeComponent
         // InfoComponent,
         // FaIconComponent
     ],
@@ -45,7 +48,8 @@ import {SkillListComponent} from "../profile/skill-list/skill-list.component";
         ProfileComponent,
         InfoComponent,
         SkillComponent,
-        SkillListComponent
+        SkillListComponent,
+        UserSkillRangeComponent
         // InfoComponent
     ],
     providers: [
@@ -56,7 +60,8 @@ import {SkillListComponent} from "../profile/skill-list/skill-list.component";
         Camera,
         CameraService,
         Crop,
-        Base64
+        Base64,
+        SkillListService
     ]
 })
 export class MainboardModule {

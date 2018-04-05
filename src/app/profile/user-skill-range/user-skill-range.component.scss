@@ -1,0 +1,19 @@
+page-profile-user-skill-range {
+  .range-md-secondary .range-bar-active, .range-md-secondary .range-knob, .range-md-secondary .range-pin, .range-md-secondary .range-pin::before {
+    background: $active_bg_color;
+  }
+  .list-header-md {
+    text-align: center;
+    color: $header_bg_color;
+  }
+
+  ion-label {
+    color: $header_bg_color;
+  }
+  .toolbar-background-md {
+    background-color: $header_bg_color;
+  }
+  ion-icon, .toolbar-title, .toolbar-title-md {
+    color: rgb(255, 255, 255);
+  }
+}
