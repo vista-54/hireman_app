@@ -63,7 +63,7 @@ export class RequestService implements ApiService {
      * @param options
      * @returns {Promise<ArrayBuffer>|Promise<TResult|ArrayBuffer>}
      */
-    public put(url: string, credentials: any) {
+    public put(url: string, credentials: any):Observable<any> {
         return this.http.put(url, credentials)
             .do(() => {
                 },

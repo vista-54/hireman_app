@@ -17,3 +17,10 @@
 @import "job-list/job-list.component";
 @import "profile/profile.component";
 
+.checkbox-md-primary .checkbox-checked {
+  background-color: rgb(255, 255, 255);
+  border-color: $active_bg_color;
+  .checkbox-inner {
+    border-color: $header_bg_color !important;
+  }
+}

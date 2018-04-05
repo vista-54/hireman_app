@@ -1,0 +1,11 @@
+page-profile-skill-list {
+  ion-label {
+    color: $header_bg_color;
+  }
+  .toolbar-background-md {
+    background-color: $header_bg_color;
+  }
+  ion-icon, .toolbar-title, .toolbar-title-md {
+    color: rgb(255, 255, 255);
+  }
+}

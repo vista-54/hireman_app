@@ -39,10 +39,14 @@ page-mainboard {
 
   [icon-only] ion-icon {
     padding: 0 0.5em;
-    font-size: 1.5em!important;
+    font-size: 1.5em !important;
     line-height: .67;
     pointer-events: none;
   }
+  .fab-md {
+    background-color: $header_bg_color;
+  }
+
 
 }
 

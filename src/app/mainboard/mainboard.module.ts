@@ -17,6 +17,7 @@ import {Camera} from '@ionic-native/camera';
 import {CameraService} from "../shared/services/camera.service";
 import {Crop} from "@ionic-native/crop";
 import {Base64} from "@ionic-native/base64";
+import {SkillListComponent} from "../profile/skill-list/skill-list.component";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {Base64} from "@ionic-native/base64";
         // FriendListComponent,
         ProfileComponent,
         InfoComponent,
-        SkillComponent
+        SkillComponent,
+        SkillListComponent
         // InfoComponent,
         // FaIconComponent
     ],
@@ -42,7 +44,8 @@ import {Base64} from "@ionic-native/base64";
         // FriendListComponent,
         ProfileComponent,
         InfoComponent,
-        SkillComponent
+        SkillComponent,
+        SkillListComponent
         // InfoComponent
     ],
     providers: [

@@ -18,12 +18,18 @@ export class UserService extends EntityService {
     public edit(data: Object) {
         data['passport'] = data['passport'] ? 1 : 0;
         return this.request.put(COMMON_URL.user.update, data)
-            .do(() => {
-                this.showNotification('success', COMMON_MSG[this.service_name].update);
-            },
-            err => {
-                console.log(err);
-            });
+            .do(data => {
+                    if (data.success) {
+                        this.showNotification('success', COMMON_MSG[this.service_name].update);
+                    }
+                    else {
+                        debugger
+                        this.incorrectValidationErrors(data.error);
+                    }
+                },
+                err => {
+                    console.log(err);
+                });
     }
 
 }

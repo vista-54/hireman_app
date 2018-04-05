@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
 import {UserSkillsService} from "../../shared/services/user-skills.service";
+import {ModalController, NavController} from "ionic-angular";
+import {MainboardComponent} from "../../mainboard/mainboard.component";
+import {SkillListComponent} from "../skill-list/skill-list.component";
 
 declare interface Skill {
     name: string,
@@ -14,7 +17,7 @@ declare interface Skill {
 export class SkillComponent {
     public entity: Skill[];
 
-    constructor(private service: UserSkillsService) {
+    constructor(private service: UserSkillsService, private navCtrl: NavController, public modalCtrl: ModalController) {
 
     }
 
@@ -28,6 +31,12 @@ export class SkillComponent {
             .subscribe(success => {
                 this.entity = success['entity'];
             });
+    }
+
+    goToAddSkill() {
+        debugger
+        let profileModal = this.modalCtrl.create(SkillListComponent);
+        profileModal.present();
     }
 
 }

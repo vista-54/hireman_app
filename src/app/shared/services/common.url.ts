@@ -16,6 +16,8 @@ export const COMMON_URL = {
     },
     'user-skill': {
         index: api + 'user-skill'
-
+    },
+    skill: {
+        index: api + 'skill'
     }
 };

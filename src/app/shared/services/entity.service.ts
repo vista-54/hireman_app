@@ -83,4 +83,13 @@ export class EntityService implements Entity {
         toast.present();
     }
 
+    public incorrectValidationErrors(errors: Array<String>) {
+        let errorMsg = "";
+        for (var i in errors) {
+            const obj = errors[i];
+            errorMsg += obj + " ";
+        }
+        this.showNotification('error', errorMsg);
+    }
+
 }
