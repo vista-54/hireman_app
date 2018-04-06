@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {UserSkillsService} from "../../shared/services/user-skills.service";
 import {ModalController, NavController} from "ionic-angular";
 import {SkillListComponent} from "../skill-list-modal/skill-list.component";
@@ -15,6 +15,7 @@ declare interface Skill {
 })
 export class SkillComponent {
     public entity: Skill[];
+    @Input() editMode: boolean;
 
     constructor(private service: UserSkillsService, private navCtrl: NavController, public modalCtrl: ModalController) {
 

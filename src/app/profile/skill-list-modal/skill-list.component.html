@@ -20,7 +20,7 @@
     <ion-list>
         <ion-item *ngFor="let skill of entity">
             <ion-label>{{skill.name}}</ion-label>
-            <ion-checkbox color="primary" round item-end (ionChange)="onChangeCheckBox(skill.id)">
+            <ion-checkbox color="primary" round item-end (ionChange)="onChangeCheckBox(skill.id,$event)">
             </ion-checkbox>
         </ion-item>
     </ion-list>

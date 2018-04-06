@@ -10,19 +10,20 @@
             Оберіть рівень
         </ion-title>
         <ion-buttons right>
-            <button ion-button icon-only (click)="save()">
+            <button ion-button icon-only (click)="dismiss()">
                 <ion-icon name="done-all"></ion-icon>
             </button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
+
 <ion-content>
     <ion-list>
         <ion-list-header>
             Оберіть рівень володіння навичкою
         </ion-list-header>
         <ion-item>
-            <ion-range min="1" max="10" [pin]="true" [(ngModel)]="saturation" color="secondary">
+            <ion-range min="1" max="10" [pin]="true" [(ngModel)]="level" color="secondary">
                 <ion-label range-left>1</ion-label>
                 <ion-label range-right>10</ion-label>
             </ion-range>

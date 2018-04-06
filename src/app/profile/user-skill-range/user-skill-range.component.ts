@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {UserSkillsService} from "../../shared/services/user-skills.service";
-import {ModalController, NavController, ViewController} from "ionic-angular";
+import {ModalController, NavController, NavParams, ViewController} from "ionic-angular";
 import {SkillListComponent} from "../skill-list-modal/skill-list.component";
 
 declare interface Skill {
@@ -15,12 +15,12 @@ declare interface Skill {
 })
 export class UserSkillRangeComponent {
     public entity: Skill[];
+    public level: number;
 
     constructor(private service: UserSkillsService, private navCtrl: NavController, public modalCtrl: ModalController,
                 private viewCtrl: ViewController) {
-
+        this.level = 1;
     }
-
 
     ngOnInit() {
         this.getAll();
@@ -39,7 +39,10 @@ export class UserSkillRangeComponent {
     }
 
     dismiss() {
-        this.viewCtrl.dismiss();
+        const data = {
+            level: this.level
+        };
+        this.viewCtrl.dismiss(data);
     }
 
 }

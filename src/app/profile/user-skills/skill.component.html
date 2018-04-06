@@ -1,44 +1,31 @@
-<ion-card *ngFor="let skill of skillsArr">
+<ion-card *ngFor="let skill of entity">
     <ion-card-header text-wrap>
-        {{entity.name}}
+        {{skill.name}} {{skill.level}}/10
+
     </ion-card-header>
 
     <ion-card-content>
-        <ion-item no-padding>
-            <ion-label class="card-label">
-                {{entity.level}}/10
-            </ion-label>
-            <button *ngIf="!editSkills"
-                    ion-button
-                    text-capitalize
-                    round outline
-                    color="grey"
-                    item-end>Змiнити
-            </button>
-            <ion-checkbox color="pimary"
-                          *ngIf="editSkills"
-                          (click)="checkSkill(skill)"
-                          item-end></ion-checkbox>
-        </ion-item>
+        <ion-range *ngIf="editMode" min="1" max="10" [pin]="true" [(ngModel)]="skill.level" color="secondary">
+            <ion-label range-left>1</ion-label>
+            <ion-label range-right>10</ion-label>
+        </ion-range>
     </ion-card-content>
-</ion-card>
 
 
-
-<ion-fab right bottom *ngIf="!editSkills">
-    <button ion-fab (click)="goToAddSkill()" color="grey">
-        <ion-icon name="add" color="white"></ion-icon>
-    </button>
-</ion-fab>
-<!--ngClass="{{skillsArr.length === 0 ? '' : 'custom-margin'}}"-->
-<ion-footer text-center *ngIf="editSkills" ngClass="{{registrationIsFinished ? 'above-tabs' : 'bottom'  }}">
-    <button ion-button
-            no-margin
-            color="white"
-            class="futer-button"
-            (click)="deleteSkills()"
-            col-12>Видалити вибрані
-    </button>
-</ion-footer>
+    <ion-fab right bottom *ngIf="!editSkills">
+        <button ion-fab (click)="goToAddSkill()" color="grey">
+            <ion-icon name="add" color="white"></ion-icon>
+        </button>
+    </ion-fab>
+    <!--ngClass="{{skillsArr.length === 0 ? '' : 'custom-margin'}}"-->
+    <ion-footer text-center *ngIf="editSkills" ngClass="{{registrationIsFinished ? 'above-tabs' : 'bottom'  }}">
+        <button ion-button
+                no-margin
+                color="white"
+                class="futer-button"
+                (click)="deleteSkills()"
+                col-12>Видалити вибрані
+        </button>
+    </ion-footer>
 
 
