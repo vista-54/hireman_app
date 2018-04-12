@@ -1,9 +1,9 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {UserSkillsService} from "../../shared/services/user-skills.service";
-import {ModalController, NavController} from "ionic-angular";
+import {ModalController} from "ionic-angular";
 import {SkillListComponent} from "../skill-list-modal/skill-list.component";
 
-declare interface Skill {
+export declare interface Skill {
     name: string,
     level: number
 }
@@ -16,8 +16,9 @@ declare interface Skill {
 export class SkillComponent {
     public entity: Skill[];
     @Input() editMode: boolean;
+    @Output() onSkillChange = new EventEmitter<Skill[]>();
 
-    constructor(private service: UserSkillsService, private navCtrl: NavController, public modalCtrl: ModalController) {
+    constructor(private service: UserSkillsService, public modalCtrl: ModalController) {
 
     }
 
@@ -30,12 +31,20 @@ export class SkillComponent {
         this.service.get()
             .subscribe(success => {
                 this.entity = success['entity'];
+                this.onSkillChange.emit(this.entity);
             });
     }
 
     goToAddSkill() {
         let profileModal = this.modalCtrl.create(SkillListComponent);
+        profileModal.onDidDismiss(data => {
+            this.getAll();
+        });
         profileModal.present();
+    }
+
+    onFormChange() {
+        this.onSkillChange.emit(this.entity);
     }
 
 }

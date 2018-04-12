@@ -15,14 +15,14 @@ export declare interface loginCredentials {
 })
 
 export class LoginComponent {
-
+    public isActive: boolean;
     public user: loginCredentials = {
         phone: '',
         password: ''
     };
 
     constructor(private auth: AuthService, private navCtrl: NavController) {
-
+        this.isActive = true;
     }
 
     login() {
@@ -31,7 +31,6 @@ export class LoginComponent {
                 localStorage.token = success['data']['token'];
                 localStorage.isLogged = true;
                 this.navCtrl.push(MainboardComponent);
-
             },
             error => {
                 console.log(error)
@@ -41,5 +40,9 @@ export class LoginComponent {
 
     goToRegistration() {
         this.navCtrl.push(RegistrationComponent);
+    }
+
+    showPass() {
+        this.isActive = !this.isActive;
     }
 }

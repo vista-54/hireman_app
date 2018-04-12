@@ -150,6 +150,8 @@ page-registration {
     color: #000;
 
   }
+  .telef:before { content: "+380" }
+
   .telef p{
     /*margin-right: 29px;
         margin-top: -18px;
@@ -160,7 +162,6 @@ page-registration {
 
   }
   .telephone{
-    margin-left: 29px;
     border: none;
     margin-top: 2px;
   }

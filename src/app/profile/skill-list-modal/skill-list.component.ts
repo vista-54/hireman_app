@@ -45,6 +45,7 @@ export class SkillListComponent {
         this.userSkillService.create(this.skills)
             .subscribe(data => {
                 console.log(data);
+                this.dismiss();
             })
     }
 

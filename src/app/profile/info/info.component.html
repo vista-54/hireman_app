@@ -7,12 +7,13 @@
         <ion-list col-8>
             <div class="first_last_name">
                 <ion-item floating>
-                    <ion-input (ionChange)="onFormChange()" [(ngModel)]="entity.name" [disabled]="!editMode"
+                    <ion-input   (ionChange)="onFormChange()" [(ngModel)]="entity.name" [disabled]="!editMode"
                                placeholder="Ім'я"
                                type="text"></ion-input>
                 </ion-item>
                 <ion-item floating>
-                    <ion-input (ionChange)="onFormChange()" [(ngModel)]="entity.surname" [disabled]="!editMode"
+                    <ion-input [ngStyle]="editMode?{'border-bottom':'1px dotted'}:{}" (ionChange)="onFormChange()"
+                               [(ngModel)]="entity.surname" [disabled]="!editMode"
                                placeholder="Прізвище"
                                type="text"></ion-input>
                 </ion-item>
@@ -20,25 +21,26 @@
         </ion-list>
     </ion-row>
     <ion-item no-padding>
-        <ion-input placeholder="Номер телефону" type="text" (ionChange)="onFormChange()" [(ngModel)]="entity.phone"
+        <ion-input name="phone" placeholder="Номер телефону"
+                   type="text" (ionChange)="onFormChange()" [(ngModel)]="entity.phone"
                    disabled></ion-input>
         <ion-row class="border">
         </ion-row>
     </ion-item>
     <ion-item no-padding>
-        <ion-input placeholder="E-mail" type="text" (ionChange)="onFormChange()" [(ngModel)]="entity.email"
+        <ion-input  [ngStyle]="editMode?{'border-bottom':'1px dotted'}:{}" placeholder="E-mail" type="text" (ionChange)="onFormChange()" [(ngModel)]="entity.email"
                    [disabled]="!editMode"></ion-input>
         <ion-row class="border">
         </ion-row>
     </ion-item>
     <ion-item no-padding>
-        <ion-input placeholder="Місто" type="text" (ionChange)="onFormChange()" [(ngModel)]="entity.city"
+        <ion-input  [ngStyle]="editMode?{'border-bottom':'1px dotted'}:{}" placeholder="Місто" type="text" (ionChange)="onFormChange()" [(ngModel)]="entity.city"
                    [disabled]="!editMode"></ion-input>
         <ion-row class="border">
         </ion-row>
     </ion-item>
-    <ion-item no-padding>
-        <ion-label>У мене є закордонний паспорт</ion-label>
+    <ion-item no-padding  [ngStyle]="editMode?{'border-bottom':'1px dotted'}:{}">
+        <ion-label> У мене є закордонний паспорт</ion-label>
         <ion-checkbox (ionChange)="onFormChange()" color="primary" checked="false" round item-end
                       [(ngModel)]="entity.passport"
                       [disabled]="!editMode"></ion-checkbox>

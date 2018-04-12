@@ -15,6 +15,7 @@ import {RegistrationComponent} from "./registration/registration.component";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {MainboardModule} from "./mainboard/mainboard.module";
 import {AuthenticationInterceptor} from "./shared/services/authentication.interceptor";
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import {AuthenticationInterceptor} from "./shared/services/authentication.interc
         BrowserModule,
         IonicModule.forRoot(MyApp),
         HttpClientModule,
-        MainboardModule
+        MainboardModule,
+        LoadingBarHttpClientModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [

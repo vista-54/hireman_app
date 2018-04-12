@@ -20,6 +20,7 @@ import {Base64} from "@ionic-native/base64";
 import {SkillListComponent} from "../profile/skill-list-modal/skill-list.component";
 import {SkillListService} from "../shared/services/skill-list.service";
 import {UserSkillRangeComponent} from "../profile/user-skill-range/user-skill-range.component";
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {UserSkillRangeComponent} from "../profile/user-skill-range/user-skill-ra
         BrowserModule,
         HttpClientModule,
         IonicModule.forRoot(MainboardComponent),
+        LoadingBarHttpClientModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -49,7 +51,7 @@ import {UserSkillRangeComponent} from "../profile/user-skill-range/user-skill-ra
         InfoComponent,
         SkillComponent,
         SkillListComponent,
-        UserSkillRangeComponent
+        UserSkillRangeComponent,
         // InfoComponent
     ],
     providers: [

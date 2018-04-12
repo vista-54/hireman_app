@@ -5,27 +5,27 @@
     </ion-card-header>
 
     <ion-card-content>
-        <ion-range *ngIf="editMode" min="1" max="10" [pin]="true" [(ngModel)]="skill.level" color="secondary">
+        <ion-range *ngIf="editMode" min="1" max="10" [pin]="true" (ionChange)="onFormChange()" [(ngModel)]="skill.level"
+                   color="secondary">
             <ion-label range-left>1</ion-label>
             <ion-label range-right>10</ion-label>
         </ion-range>
     </ion-card-content>
 
 
-    <ion-fab right bottom *ngIf="!editSkills">
-        <button ion-fab (click)="goToAddSkill()" color="grey">
-            <ion-icon name="add" color="white"></ion-icon>
-        </button>
-    </ion-fab>
-    <!--ngClass="{{skillsArr.length === 0 ? '' : 'custom-margin'}}"-->
-    <ion-footer text-center *ngIf="editSkills" ngClass="{{registrationIsFinished ? 'above-tabs' : 'bottom'  }}">
-        <button ion-button
-                no-margin
-                color="white"
-                class="futer-button"
-                (click)="deleteSkills()"
-                col-12>Видалити вибрані
-        </button>
-    </ion-footer>
-
-
+</ion-card>
+<ion-fab right bottom>
+    <button ion-fab (click)="goToAddSkill()" color="grey">
+        <ion-icon name="add" color="white"></ion-icon>
+    </button>
+</ion-fab>
+<!--ngClass="{{skillsArr.length === 0 ? '' : 'custom-margin'}}"-->
+<ion-footer text-center *ngIf="editSkills" ngClass="{{registrationIsFinished ? 'above-tabs' : 'bottom'  }}">
+    <button ion-button
+            no-margin
+            color="white"
+            class="futer-button"
+            (click)="deleteSkills()"
+            col-12>Видалити вибрані
+    </button>
+</ion-footer>

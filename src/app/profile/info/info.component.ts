@@ -32,7 +32,7 @@ export class InfoComponent implements OnInit {
         passport: false,
         file: ''
     };
-    @Output() onEntityChange = new EventEmitter<User>();
+    @Output() onUserChange = new EventEmitter<User>();
 
 
     public defaultImg: string;
@@ -51,7 +51,7 @@ export class InfoComponent implements OnInit {
         this.service.get()
             .subscribe(success => {
                 this.entity = success['entity'];
-                this.onEntityChange.emit(this.entity);
+                this.onUserChange.emit(this.entity);
             });
     }
 
@@ -59,7 +59,7 @@ export class InfoComponent implements OnInit {
      * Emit data to @ProfileComponent
      */
     onFormChange() {
-        this.onEntityChange.emit(this.entity);
+        this.onUserChange.emit(this.entity);
     }
 
     openPhotoActions() {

@@ -36,8 +36,11 @@ export class EntityService implements Entity {
     public create(data: any) {
         return this.request.post(COMMON_URL[this.service_name].create, data)
             .do(() => {
-                this.showNotification('success', COMMON_MSG[this.service_name].create);
-            });
+                    this.showNotification('success', COMMON_MSG[this.service_name].create);
+                },
+                err => {
+                    this.incorrectValidationErrors(err.error.error);
+                });
     }
 
     /**

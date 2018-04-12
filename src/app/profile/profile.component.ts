@@ -1,6 +1,8 @@
 import {Component} from "@angular/core";
 import {User} from "./info/info.component";
 import {UserService} from "../shared/services/user.service";
+import {UserSkillsService} from "../shared/services/user-skills.service";
+import {Skill} from "./user-skills/skill.component";
 
 
 @Component({
@@ -11,31 +13,46 @@ import {UserService} from "../shared/services/user.service";
 export class ProfileComponent {
     public segment: string;
     public editMode: boolean;
-    private entity: User;
+    private user: User;
+    private skills: Skill[];
 
-    constructor(private service: UserService) {
+    constructor(private userService: UserService, private userSkillService: UserSkillsService) {
         this.segment = 'info';
-        this.editMode = false;
+        this.editMode = true;
     }
 
     public editEnable() {
         this.editMode = !this.editMode;
     }
 
-    onEntityChange(data: User) {
-        this.entity = data;
+    onUserChange(data: User) {
+        this.user = data;
+    }
+
+    onSkillChange(data: Skill[]) {
+        this.skills = data;
     }
 
     save() {
-        this.service.edit(this.entity)
-            .subscribe(data => {
-                    debugger
-                    this.editEnable();
-                },
-                err => {
-                    debugger
-                    console.log(err);
-                })
+        if (this.segment === 'info') {
+            this.userService.edit(this.user)
+                .subscribe(() => {
+                        this.editEnable();
+                    },
+                    err => {
+                        console.log(err);
+                    })
+        } else if (this.segment === 'skills') {
+            this.userSkillService.edit(this.skills)
+                .subscribe(() => {
+
+                        this.editEnable();
+                    },
+                    err => {
+                        console.log(err);
+                    })
+        }
+
     }
 
 

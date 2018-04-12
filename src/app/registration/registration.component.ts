@@ -10,13 +10,14 @@ import {MainboardComponent} from "../mainboard/mainboard.component";
 })
 
 export class RegistrationComponent {
+    public isActive: boolean;
     public user: loginCredentials = {
         phone: '',
         password: ''
     };
 
     constructor(private navCtrl: NavController, private service: UserService, private toastCtrl: ToastController) {
-
+        this.isActive = true;
     }
 
     goToLogin() {
@@ -30,5 +31,8 @@ export class RegistrationComponent {
             });
     }
 
+    showPass() {
+        this.isActive = !this.isActive;
+    }
 
 }

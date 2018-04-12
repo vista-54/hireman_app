@@ -3,18 +3,12 @@
         <ion-title text-center>
             Профайл
         </ion-title>
-        <ion-buttons end>
-            <button *ngIf="!editMode" ion-button icon-only (click)="editEnable()">
-                <ion-icon name="brush"></ion-icon>
-            </button>
-            <button *ngIf="editMode" ion-button icon-only (click)="save()">
-                <ion-icon name="done-all"></ion-icon>
-            </button>
-        </ion-buttons>
     </ion-navbar>
+    <ngx-loading-bar></ngx-loading-bar>
 </ion-header>
+
 <ion-content padding-vertical>
-    <div padding>
+    <div>
         <ion-segment [(ngModel)]="segment">
             <ion-segment-button value="info">
                 Про мене
@@ -28,13 +22,19 @@
     <div [ngSwitch]="segment">
 
         <div *ngSwitchCase="'info'">
-            <page-profile-info [editMode]="editMode" (onEntityChange)="onEntityChange($event)">
+            <page-profile-info [editMode]="editMode" (onUserChange)="onUserChange($event)">
 
             </page-profile-info>
         </div>
 
         <div *ngSwitchCase="'skills'">
-            <page-profile-skill [editMode]="editMode"></page-profile-skill>
+            <page-profile-skill [editMode]="editMode" (onSkillChange)="onSkillChange($event)"></page-profile-skill>
         </div>
     </div>
+
+    <ion-buttons style="text-align: center">
+        <button ion-button  (click)="save()" >
+            Зберегти
+        </button>
+    </ion-buttons>
 </ion-content>

@@ -19,11 +19,10 @@ export class UserService extends EntityService {
         data['passport'] = data['passport'] ? 1 : 0;
         return this.request.put(COMMON_URL.user.update, data)
             .do(data => {
-                    if (data.success) {
+                    if (data.status) {
                         this.showNotification('success', COMMON_MSG[this.service_name].update);
                     }
                     else {
-                        debugger
                         this.incorrectValidationErrors(data.error);
                     }
                 },
